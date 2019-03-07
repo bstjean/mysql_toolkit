@@ -1,6 +1,6 @@
 # MySQL Toolkit
 
-A collection of useful (I hope!) functions, stored procedures and SQL scripts to facilitate your job!
+A collection of useful (I hope!) functions, stored procedures and SQL scripts to facilitate your job !
 
 ## Functions
 
