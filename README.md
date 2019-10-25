@@ -13,6 +13,7 @@ A collection of useful (I hope!) functions, stored procedures and SQL scripts to
 **rot18** : Encodes/decodes a string with the ROT18 substitution cipher.  
 **rot47** :Encodes/decodes a string with the ROT47 substitution cipher.  
 **shuffle** : Randomly shuffle the characters of a string using the Fisher-Yates (aka Knuth shuffle) algorithm.  
+**snowflake_to_timestamp** : Extracts the creation time (timestamp) of a snowflake.  
 **to_roman** : Converts an integer to its Roman numeral representation.  
  
 
