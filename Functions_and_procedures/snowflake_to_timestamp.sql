@@ -10,7 +10,7 @@ RETURNS CHAR(26)
 DETERMINISTIC
 NO SQL
 SQL SECURITY DEFINER
-COMMENT 'Extracts the creation time (timestamp) of a snowflake. (v1.00)'
+COMMENT 'Extracts the creation time (timestamp) of a snowflake. (v1.01)'
 
 /*****************************************************************************
 *
@@ -19,14 +19,14 @@ COMMENT 'Extracts the creation time (timestamp) of a snowflake. (v1.00)'
 * 
 * AUTHOR:		Benoît St-Jean <bstjean@yahoo.com>
 * URL:		 	http://www.endormitoire.wordpress.com
-* VERSION: 		1.00
+* VERSION: 		1.01
 *
 * USAGE:		SELECT snowflake_to_timestamp(1187543164111990785);
-* RESULT: 		2019-10-25 01:35:28.466000
+* RESULT: 		2019-10-25 01:35:28.466
 *
 * PARAMETERS:	tweetid		bigint that represents the id of a tweet
 *
-* RETURN:		CHAR(26)
+* RETURN:		CHAR(23)
 *
 * NOTES:		Returned timestamp is ALWAYS in UTC time !
 *
@@ -44,7 +44,7 @@ BEGIN
 	DECLARE timestampResult CHAR(26);
 	
 	SET timestampResult = DATE_FORMAT(FROM_UNIXTIME(((tweetid >> 22) + 1288834974657) / 1000.0), '%Y-%m-%d %H:%i:%S.%f');
-	RETURN CONVERT_TZ(timestampResult, @@session.time_zone, '+00:00'); 
+	RETURN LEFT(CONVERT_TZ(timestampResult, @@session.time_zone, '+00:00'), 23); 
 
 END
 //
