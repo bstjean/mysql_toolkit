@@ -4,7 +4,7 @@ A collection of useful (I hope!) functions, stored procedures and SQL scripts to
 
 ## Functions
 
-**ascii_sort** : Sorts all characters of a string based on ASCII value. 
+**ascii_sort** : Sorts all characters of a string based on ASCII value.  
 **collapse_blanks** : Replaces multiple blanks with a single space.  
 **collapse_spaces** : Replaces multiple spaces with a single space.  
 **initcap** : Returns a character string with the first letter of each word converted to uppercase. This function EXACTLY mimics INITCAP of Oracle.  
