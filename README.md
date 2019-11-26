@@ -8,7 +8,9 @@ A collection of useful (I hope!) functions, stored procedures and SQL scripts to
 **collapse_blanks** : Replaces multiple blanks with a single space.  
 **collapse_spaces** : Replaces multiple spaces with a single space.  
 **initcap** : Returns a character string with the first letter of each word converted to uppercase. This function EXACTLY mimics INITCAP of Oracle.  
-**occurrences** : Returns the number of occurrences of a search string inside a source string.  
+**isProvince** : Returns 1 if argument is a Canadian 2-letter province code, 0 otherwise.  
+**isState** : Returns 1 if argument is an American 2-letter state code, 0 otherwise.  
+**occurrences** : Returns the number of occurrences of a search string inside a source string.    
 **rot5** : Encodes/decodes a string with the ROT5 substitution cipher.  
 **rot13** : Encodes/decodes a string with the ROT13 substitution cipher.  
 **rot18** : Encodes/decodes a string with the ROT18 substitution cipher.  
