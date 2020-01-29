@@ -9,7 +9,7 @@ RETURNS TINYINT UNSIGNED
 DETERMINISTIC
 NO SQL
 SQL SECURITY DEFINER
-COMMENT 'Returns the position of the last occurrence of substring targetstr in string stringparam (v1.00)'
+COMMENT 'Returns the position of the last occurrence of substring targetstr in string stringparam (v1.01)'
 
 /*****************************************************************************
 *
@@ -17,7 +17,7 @@ COMMENT 'Returns the position of the last occurrence of substring targetstr in s
 * 
 * AUTHOR:		Benoît St-Jean <bstjean@yahoo.com>
 * URL:		 	http://www.endormitoire.wordpress.com
-* VERSION: 		1.00
+* VERSION: 		1.01
 *
 * USAGE:		SELECT lastIndexOf('ab00ab00ab00', 'ab');
 * RESULT: 		9
@@ -32,30 +32,31 @@ COMMENT 'Returns the position of the last occurrence of substring targetstr in s
 ******************************************************************************/
 
 BEGIN
-DECLARE foundAnother TINYINT UNSIGNED;
-DECLARE oldIndex TINYINT UNSIGNED;
-DECLARE newIndex TINYINT UNSIGNED;
 
-SET foundAnother = 1;
-SELECT LOCATE(targetstr, stringparam) INTO oldIndex;
+DECLARE idx TINYINT UNSIGNED;
 
-IF (oldIndex IS NULL) THEN
+
+IF stringparam IS NULL THEN
 	RETURN 0;
-ELSEIF (oldIndex = 0) THEN 
+ELSEIF targetstr IS NULL THEN
+	RETURN 0;
+ELSEIF stringparam = '' THEN
+	RETURN 0;
+ELSEIF targetstr = '' THEN
 	RETURN 0;
 END IF;
 
+SET idx = CHAR_LENGTH(stringparam) - CHAR_LENGTH(targetstr) + 1;
 
-WHILE foundAnother DO
-	SET newIndex = LOCATE(targetstr, stringparam, oldIndex+1);
-	IF newIndex > oldIndex THEN
-		SET oldIndex = newIndex;
+WHILE idx > 0 DO
+	IF LOCATE(targetstr, stringparam, idx) <> 0 THEN
+		RETURN idx;
 	ELSE
-		SET foundAnother = 0;
+		SET idx = idx - 1;
 	END IF;
 END WHILE;
 
-RETURN oldIndex;
+RETURN 0;
 END //
 
 DELIMITER ;
