@@ -21,7 +21,7 @@ A collection of useful (I hope!) functions, stored procedures and SQL scripts to
 **snowflake_to_timestamp** : Extracts the creation time (timestamp) of a snowflake.  
 **to_roman** : Converts an integer to its Roman numeral representation.  
 **withoutAccents** : Returns a string with all accentuated characters replaced by their "plain" character equivalent, [A-Za-z].  
-BEWARE, this function is EXTREMELY slow!  You might want to filter out strings that do not need such transformation with the **isStrictlyAlpha** function!     
+BEWARE, this function is EXTREMELY slow!  You might want to filter out strings that do not need such transformation with the *isStrictlyAlpha* function!     
  
 
 This **README** is still under development.  
