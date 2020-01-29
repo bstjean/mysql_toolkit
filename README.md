@@ -13,7 +13,9 @@ A collection of useful (I hope!) functions, stored procedures and SQL scripts to
 **isStrictlyAlpha** : Returns 1 if the string only contains [A-Za-z] characters, 0 otherwise  
 **lastindexof** : Returns the position of the last occurrence of a substring in a source string.  
 **occurrences** : Returns the number of occurrences of a search string inside a source string.    
-**rot5** : Encodes/decodes a string with the ROT5 substitution cipher.  
+**removeAllChars : Removes all characters in a string from a source string.  
+**replaceAllChars : Replaces all characters in a string by a single replacement character from  source string.  
+**rot5** : Encodes/decodes a string with the ROT5 substitution cipher.    
 **rot13** : Encodes/decodes a string with the ROT13 substitution cipher.  
 **rot18** : Encodes/decodes a string with the ROT18 substitution cipher.  
 **rot47** :Encodes/decodes a string with the ROT47 substitution cipher.  
