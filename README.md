@@ -12,7 +12,8 @@ A collection of useful (I hope!) functions, stored procedures and SQL scripts to
 **isState** : Returns 1 if argument is an American 2-letter state code, 0 otherwise.  
 **isStrictlyAlpha** : Returns 1 if the string only contains [A-Za-z] characters, 0 otherwise  
 **lastindexof** : Returns the position of the last occurrence of a substring in a source string.  
-**occurrences** : Returns the number of occurrences of a search string inside a source string.   
+**occurrences** : Returns the number of occurrences of a search string inside a source string.  
+**randomGaussian** : Returns a random number based on a normal (gaussian) distribution.     
 **randomInt** : Returns a random positive integer between 2 unsigned integers *inclusively*     
 **removeAllChars** : Removes all characters in a string from a source string.  
 **replaceAllChars** : Replaces all characters in a string by a single replacement character from  source string.  
